@@ -287,35 +287,35 @@ public class CentroDistribución {
         return cantidadRestante;
     }
 
-//    public Paquete buscarPaqueteBinario(String codigo) {
-//        if (codigo == null || codigo.isBlank()) {
-//            throw new IllegalArgumentException("El código es obligatorio");
-//        }
-//
-//        List<Paquete> paquetes = new ArrayList<>(paquetesPorCodigo.values());
-//
-//        Collections.sort(paquetes);
-//
-//        int inicio = 0;
-//        int fin = paquetes.size() - 1;
-//
-//        while (inicio <= fin) {
-//            int medio = inicio + (fin - inicio) / 2;
-//
-//            Paquete paquete = paquetes.get(medio);
-//            int comparacion = paquete.getCodigo().compareTo(codigo);
-//
-//            if (comparacion == 0) {
-//                return paquete;
-//            } else if (comparacion < 0) {
-//                inicio = medio + 1;
-//            } else {
-//                fin = medio - 1;
-//            }
-//        }
-//
-//        return null;
-//    }
+    public Paquete buscarPaqueteBinario(String codigo) {
+        if (codigo == null || codigo.isBlank()) {
+            throw new IllegalArgumentException("El código es obligatorio");
+        }
+
+        List<Paquete> paquetes = new ArrayList<>(paquetesPorCodigo.values());
+
+        Collections.sort(paquetes);
+
+        int inicio = 0;
+        int fin = paquetes.size() - 1;
+
+        while (inicio <= fin) {
+            int medio = inicio + (fin - inicio) / 2;
+
+            Paquete paquete = paquetes.get(medio);
+            int comparacion = paquete.getCodigo().compareTo(codigo);
+
+            if (comparacion == 0) {
+                return paquete;
+            } else if (comparacion < 0) {
+                inicio = medio + 1;
+            } else {
+                fin = medio - 1;
+            }
+        }
+
+        return null;
+    }
 
 
     //Obtiene los paquetes registrados y llama el método recursivo

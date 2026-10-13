@@ -83,9 +83,9 @@ public class Main {
         System.out.println("\n--- PAQUETE MÁS PESADO ---");
         System.out.println(centro.buscarPaqueteMayorPeso());
 
-//// 5. Realizar una búsqueda binaria
-//        System.out.println("\n--- BÚSQUEDA BINARIA ---");
-//        System.out.println(centro.buscarPaqueteBinario("P020"));
+        // Realizar una búsqueda binaria
+        System.out.println("\n--- BÚSQUEDA BINARIA ---");
+        System.out.println(centro.buscarPaqueteBinario("PQ125"));
 
         //  Consultar los paquetes de un destino
         System.out.println("\n--- PAQUETES DE SALENTO ---");
