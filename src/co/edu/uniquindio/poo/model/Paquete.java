@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.model;
 public class Paquete implements Comparable<Paquete>{
 
     private String codigo;
-    private String destino; //Enum?
+    private String destino;
     private double peso;
     private int prioridad;
     private int tiempoEstimado;
