@@ -78,6 +78,7 @@ public class CentroDistribución {
     }
 
     public Paquete consultarSiguienteDespacho() {
+
         return colaDespacho.peek();
     }
 
@@ -125,6 +126,17 @@ public class CentroDistribución {
         repartidores.put(identificacion, repartidor);
     }
 
+    public void mostrarRepartidores() {
+        if (repartidores.isEmpty()) {
+            System.out.println("No hay repartidores registrados");
+            return;
+        }
+
+        for (Repartidor repartidor : repartidores.values()) {
+            System.out.println(repartidor);
+        }
+    }
+
 
     public Repartidor buscarRepartidorDisponible(Paquete paquete) {
         if (paquete == null) {
@@ -142,10 +154,10 @@ public class CentroDistribución {
 
 
     public Paquete despacharPaquete() {
-        List<Paquete> paquetesRevisados = new ArrayList<>();
-
-        Paquete paqueteSeleccionado = null;
-        Repartidor repartidorSeleccionado = null;
+        List<Paquete> paquetesRevisados = new ArrayList<>(); //Lista temporal que guarda los paquetes que no tengan
+                                                             //quién los entregue en ese momento. (Mantiene los paquetes para que no se pierdan al sacarlos de la cola)
+        Paquete paqueteSeleccionado = null;                  //Variables que empiezan vacías,
+        Repartidor repartidorSeleccionado = null;            //que guardarán el paquete y el repartidor
 
         while (!colaDespacho.isEmpty()) {
             Paquete paquete = colaDespacho.poll();
