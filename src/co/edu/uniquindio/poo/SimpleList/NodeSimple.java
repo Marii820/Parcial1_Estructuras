@@ -19,7 +19,7 @@ public class NodeSimple<T> {
         this.data = data;
     }
 
-    public NodeSimple getNext() {
+    public NodeSimple<T> getNext() {
         return next;
     }
 

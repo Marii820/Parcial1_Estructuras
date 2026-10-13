@@ -23,6 +23,7 @@ public class SimpleLinkedList<T> implements ICollection<T> {
     public void addFirst(T data){
         NodeSimple<T> newNode = new  NodeSimple<>(data);
         newNode.setNext(firstNode);
+        firstNode = newNode;
         size++;
     }
 
